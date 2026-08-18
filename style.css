@@ -1,126 +1,185 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* ===== General Page Styling ===== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    background:#063B00;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    padding:50px 20px;
+body {
+    min-height: 100vh;
+    background: #F1E2D1;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 60px 20px;
+    color: #541A1A;
 }
 
-h1{
-    color:#E1E100;
-    margin-bottom:30px;
-    font-size:40px;
-    letter-spacing:2px;
-    text-shadow:2px 2px 10px rgba(0,0,0,.4);
+
+/* ===== Heading ===== */
+
+h1 {
+    color: #810B38;
+    font-size: 42px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-input{
-    width:350px;
-    max-width:90%;
-    padding:14px 18px;
-    border:none;
-    outline:none;
-    border-radius:12px;
-    background:white;
-    font-size:16px;
-    margin-bottom:15px;
-    transition:.3s;
+
+/* ===== Input ===== */
+
+#i {
+    width: 350px;
+    padding: 14px 18px;
+
+    border: 2px solid #DCC3AA;
+    border-radius: 10px;
+
+    background-color: #fff;
+    color: #541A1A;
+
+    font-size: 16px;
+    outline: none;
+
+    transition: 0.3s;
 }
 
-input:focus{
-    box-shadow:0 0 12px #90B800;
+#i::placeholder {
+    color: #8d7770;
 }
 
-#add{
-    padding:14px 35px;
-    border:none;
-    border-radius:12px;
-    background:#90B800;
-    color:#063B00;
-    font-size:17px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-    margin-bottom:30px;
+#i:focus {
+    border-color: #810B38;
+    box-shadow: 0 0 8px rgba(129, 11, 56, 0.2);
 }
 
-#add:hover{
-    background:#E1E100;
-    transform:translateY(-2px);
+
+/* ===== Add Button ===== */
+
+#add {
+    margin-left: 8px;
+    margin-top: 30px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+
+    background-color: #810B38;
+    color: #F1E2D1;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-#lists{
-    width:420px;
-    max-width:95%;
+#add:hover {
+    background-color: #541A1A;
+    transform: translateY(-2px);
 }
 
-#lists p{
-    background:#266210;
-    color:white;
-    margin-bottom:15px;
-    padding:15px 18px;
-    border-radius:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    cursor:pointer;
-    font-size:17px;
-    transition:.3s;
-    box-shadow:0 5px 12px rgba(0,0,0,.25);
+#add:active {
+    transform: translateY(0);
 }
 
-#lists p:hover{
-    background:#90B800;
-    color:#063B00;
+
+/* ===== Todo List Container ===== */
+
+#lists {
+    width: 450px;
+    margin-top: 35px;
 }
 
-#lists button{
-    background:#E1E100;
-    color:#063B00 !important;
-    border:none;
-    padding:8px 14px;
-    border-radius:8px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
+
+/* ===== Individual Todo ===== */
+
+#lists p {
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 12px 10px 18px;
+    margin-bottom: 12px;
+
+    background-color: #DCC3AA;
+    color: #541A1A;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 8px rgba(84, 26, 26, 0.12);
+
+    transition: 0.3s;
 }
 
-#lists button:hover{
-    background:white;
-    transform:scale(1.05);
+#lists p:hover {
+    background-color: #cdb298;
+    transform: translateX(3px);
 }
 
-@media(max-width:500px){
 
-    h1{
-        font-size:32px;
+/* ===== Delete Button ===== */
+
+#lists p button {
+    margin-left: 15px;
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #541A1A;
+    color: #F1E2D1 !important;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#lists p button:hover {
+    background-color: #810B38;
+    transform: scale(1.05);
+}
+
+
+/* ===== Mobile Responsive Design ===== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 40px 15px;
     }
 
-    input{
-        width:100%;
+    h1 {
+        font-size: 34px;
     }
 
-    #add{
-        width:100%;
+    #i {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 10px;
     }
 
-    #lists{
-        width:100%;
+    #add {
+        margin-left: 0;
     }
 
-    #lists p{
-        font-size:15px;
+    #lists {
+        width: 100%;
+        max-width: 450px;
     }
 }

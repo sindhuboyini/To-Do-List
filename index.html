@@ -39,9 +39,10 @@
         b.textContent="Delete"
         b.style.color="red"
 
-        b.addEventListener("click",()=>{
-            p.remove()
-        })
+       b.addEventListener("click", (event) => {
+        event.stopPropagation()
+         p.remove()
+       })
 
         p.appendChild(b)
         lists.appendChild(p)
